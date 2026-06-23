@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>EASTC Students Organization</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- 1. HEADER (Grid Item 1) -->
+<header class="main-header">
+    <div class="logo-left">
+        <img src="images/logo.png" alt="Coat of Arms" onerror="this.src='https://placehold.co/100x100?text=EASTC'">
+    </div>
+
+    <div class="header-center">
+        <h1>EASTC Students Organization</h1>
+        <p class="subtitle">
+            Empowering Students Through Leadership and Innovation
+        </p>
+    </div>
+
+    <div class="logo-right">
+        <img src="images/images.jfif" alt="EASTC Logo" onerror="this.src='https://placehold.co/100x100?text=EASTCSO'">
+    </div>
+</header>
+
+<nav class="navbar">
+
+    <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="news.html">News & Highlights</a></li>
+        <li><a href="leadership.html">Leadership</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="services.html">Services</a></li>
+         <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<!-- HE
+<section id="News & Highlights" class="section gray-bg"></section>
+<!-- 2. MAIN GRID LAYOUT (Requirement: Main 2fr/1fr CSS Grid Layout) -->
+<main id="portal-grid" class="main-layout-grid">
+    
+    <!-- COLUMN 1: Main Content (2fr) -->
+    <article class="main-content-area">
+        
+        <div class="grid-card">
+            <h2>EASTC Wasomi League Standings 2025/26</h2>
+            <p style="margin-bottom: 15px; color: #555;">Latest updates on our ongoing campus league standings. The top teams qualify for the upcoming Grand Awards!</p>
+            
+            <!-- REQUIREMENT: HTML Table -->
+            <div class="table-responsive">
+                <table class="wasomi-table">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Team Name</th>
+                            <th>P</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Statistics FC (Level 3)</td>
+                            <td>10</td>
+                            <td>8</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><strong>25</strong></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Data Giants (Level 2)</td>
+                            <td>10</td>
+                            <td>7</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td><strong>23</strong></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Math Pioneers</td>
+                            <td>10</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td><strong>18</strong></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Computing United</td>
+                            <td>10</td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td>4</td>
+                            <td><strong>14</strong></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Demography Stars</td>
+                            <td>10</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>7</td>
+                            <td><strong>7</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="grid-card" style="margin-top: 30px;">
+            <h2>Academic & Leadership Calendar</h2>
+            <p>Stay on track with our official events schedule for the upcoming semester.</p>
+            <ol class="calendar-list" style="margin-top: 15px; padding-left: 20px;">
+                <li><strong>June 18, 2026:</strong> EASTCSO General Elections Day.</li>
+                <li><strong>June 30, 2026:</strong> Project Submission & Coursework Review.</li>
+                <li><strong>July 1st Week, 2026:</strong> Group Project Presentations.</li>
+            </ol>
+        </div>
+
+    </article>
+
+    <!-- COLUMN 2: Sidebar (1fr) for LIVE Announcements (CRUD System) -->
+    <aside class="sidebar-area">
+        <div class="sidebar-card">
+            <h3>Live Announcement Board</h3>
+            <p style="font-size: 0.9rem; color: #ddd; margin-bottom: 20px;">
+                Manage student body announcements in real-time. Use the inputs below to add, edit, or delete notices.
+            </p>
+
+            <!-- CRUD Inputs Form -->
+            <div class="crud-form">
+                <input type="text" id="title" placeholder="Announcement Title">
+                <textarea id="message" rows="4" placeholder="Announcement Message"></textarea>
+                <button class="btn-primary" onclick="addAnnouncement()">Publish Notice</button>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
+
+            <!-- Render Target for JavaScript CRUD List -->
+            <div id="announcementList"></div>
+        </div>
+    </aside>
+
+</main>
+
+</section>
+<footer>
+    <div class="footer-content">
+        <div>
+            <h3>EASTCSO</h3>
+            <p>Representing students through leadership, innovation and excellence since our establishment.</p>
+        </div>
+       
+        <div>
+            <h3>Contact Address</h3>
+            <p>P.O. Box 35103</p>
+            <p>Dar es Salaam, Tanzania</p>
+            <p>Email: info@eastc.ac.tz</p>
+        </div>
+    </div>
+    <hr>
+    <p class="copyright">© 2026 EASTC Students Organization. All Rights Reserved. Designed by Web Design Students Group.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

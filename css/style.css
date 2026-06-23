@@ -1,0 +1,804 @@
+/* =========================================
+   1. GLOBAL STYLES & RESET
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Base Sections Layout */
+.section {
+    padding: 80px 10%;
+}
+
+.gray-bg {
+    background: #eaeff5;
+}
+
+.section h2 {
+    text-align: center;
+    color: hsl(217, 13%, 87%);
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    background-color: #08295a;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION BAR
+   ========================================= */
+.main-header {
+    background: #08295a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    border-bottom: 4px solid #d4af37;
+}
+
+.logo-left img, .logo-right img {
+    width: 90px;
+    height: auto;
+}
+
+.header-center {
+    text-align: center;
+}
+
+.header-center h1 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.header-center .subtitle {
+    color: #d4af37;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+
+/* =========================================
+   RESPONSIVE NAVBAR WITH HAMBURGER MENU
+========================================= */
+
+.navbar{
+    background:#08295a;
+    position:sticky;
+    top:0;
+    z-index:9999;
+    box-shadow:0 4px 6px rgba(0,0,0,0.1);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+}
+
+.nav-logo{
+    color:white;
+    font-size:1.3rem;
+    font-weight:bold;
+    padding:15px 0;
+}
+
+.nav-menu{
+    display:flex;
+    list-style:none;
+}
+
+.nav-menu li a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:18px 20px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.nav-menu li a:hover{
+    background:#d4af37;
+    color:#08295a;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:white;
+    cursor:pointer;
+    user-select:none;
+}
+/* =========================================
+   3. HERO SLIDESHOW SECTION
+   ========================================= */
+.hero-slideshow {
+    width: 100%;
+    background: #041530;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+
+.slide {
+    display: none; /* Controlled by JavaScript */
+}
+
+.slide-content {
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.caption {
+    flex: 1;
+    color: #fff;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border-left: 5px solid #d4af37;
+    text-align: left;
+}
+
+.caption h2 {
+    margin: 0 0 15px;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.caption p {
+    margin: 0 0 15px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.slide-image {
+    flex: 1.3;
+    display: flex;
+    justify-content: center;
+}
+
+.slide-image img {
+    width: 100%;
+    height: 55vh;
+    min-height: 350px;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Dots Layout */
+.dots {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    display: inline-block;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.dot.active, .dot:hover {
+    background: #d4af37;
+}
+
+.fade {
+    animation: fadeEffect 1.2s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* =========================================
+   4. ABOUT US SECTION (Picha Kushoto, Maelezo Kulia)
+   ========================================= */
+.about-section {
+    padding: 80px 10%;
+    background: #ffffff;
+}
+
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+}
+
+.about-text {
+    flex: 1.6;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2.4rem;
+    color: #08295a;
+    margin-bottom: 5px;
+}
+
+.about-text .about-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.objectives-list {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.objectives-list li {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.about-text .motto-text {
+    margin-top: 25px;
+    color: #08295a;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* =========================================
+   5. REQUIREMENT: MAIN LAYOUT GRID (2fr / 1fr)
+   ========================================= */
+.main-layout-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Exact requirement */
+    gap: 30px;
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Column 1: Main Content */
+.main-content-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid #08295a;
+}
+
+.grid-card h2 {
+    color: #08295a;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+/* REQUIREMENT: Styling of HTML Table */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.wasomi-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wasomi-table th {
+    background: #08295a;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+}
+
+.wasomi-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.wasomi-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.wasomi-table tr:hover {
+    background: #edf2f7;
+}
+
+/* Column 2: Sidebar (Live CRUD Announcements) */
+.sidebar-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-card {
+    background: #08295a;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-top: 4px solid #d4af37;
+    position: sticky;
+    top: 90px;
+}
+
+.sidebar-card h3 {
+    font-size: 1.4rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+/* CRUD Admin inputs */
+.crud-form input, .crud-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-family: inherit;
+}
+
+.crud-form input::placeholder, .crud-form textarea::placeholder {
+    color: #ccc;
+}
+
+.btn-primary {
+    background: #d4af37;
+    color: #08295a;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: white;
+}
+
+/* =========================================
+   6. CARDS (Events & Services)
+   ========================================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #08295a;
+    margin-bottom: 10px;
+}
+
+.event-date {
+    color: #d4af37;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.service-card {
+    border-left: 4px solid #08295a;
+}
+
+/* =========================================
+   7. CONTACT FORM
+   ========================================= */
+form {
+    max-width: 700px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+form button {
+    background: #08295a;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #d4af37;
+    color: #08295a;
+}
+
+/* =========================================
+   8. GALLERY SECTION
+   ========================================= */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* =========================================
+   9. FOOTER
+   ========================================= */
+footer {
+    background: #031a3d;
+    color: white;
+    padding: 50px 10% 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-content div {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-content h3 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.footer-content ul {
+    list-style: none;
+}
+
+.footer-content ul li {
+    margin-bottom: 10px;
+}
+
+.footer-content ul li a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-content ul li a:hover {
+    color: #d4af37;
+}
+
+footer hr {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* =========================================
+   10. MEDIA QUERIES (RESPONSIVE DESIGN)
+   ========================================= */
+@media (max-width: 992px) {
+    /* Responsive Grid layout to block */
+    .main-layout-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar-card {
+        position: static;
+    }
+
+    .slide-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .caption {
+        width: 100%;
+        text-align: center;
+        border-left: none;
+        border-top: 5px solid #d4af37;
+    }
+
+    .slide-image img {
+        height: 40vh;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li a {
+        padding: 12px;
+        text-align: center;
+    }
+
+    .header-center h1 {
+        font-size: 28px;
+    }
+    
+    .section {
+        padding: 50px 5%;
+    }
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #08295a;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.event-date {
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.event-actions {
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.btn-edit-event {
+    background: #08295a;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-edit-event:hover {
+    background: #1a3a6a;
+}
+
+.btn-delete-event {
+    background: #e53e3e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-delete-event:hover {
+    background: #c53030;
+}
+/* =========================================
+   MOBILE RESPONSIVE IMPROVEMENTS
+========================================= */
+
+@media screen and (max-width: 768px){
+
+    /* =========================================
+   2. HEADER & NAVIGATION BAR
+   ========================================= */
+.main-header {
+    background: #08295a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 4px solid #d4af37;
+}
+
+.logo-left img, .logo-right img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-center {
+    text-align: center;
+    flex-grow: 1;
+    padding: 0 15px;
+}
+
+.header-center h1 { color: #fff; font-size: 20px; font-weight: bold; }
+.header-center .subtitle { color: #d4af37; font-style: italic; font-size: 12px; }
+
+/* =========================================
+   3. NAVBAR (Hamburger Menu)
+   ========================================= */
+.navbar {
+    background: #08295a;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-menu { display: flex; list-style: none; }
+.nav-menu li a { display: block; color: #fff; text-decoration: none; padding: 18px 20px; font-weight: bold; transition: 0.3s; }
+.nav-menu li a:hover { background: #d4af37; color: #08295a; }
+
+.menu-toggle { display: none; font-size: 30px; color: white; cursor: pointer; padding: 10px; }
+
+/* =========================================
+   4. RESPONSIVE DESIGN (Media Queries)
+   ========================================= */
+
+/* Kwa Simu (Smartphone) */
+@media screen and (max-width: 600px) {
+    .logo-left img, .logo-right img { height: 40px; }
+    .header-center h1 { font-size: 14px; }
+    .header-center .subtitle { font-size: 10px; }
+}
+
+/* Kwa Hamburger Menu */
+@media screen and (max-width: 768px) {
+    .menu-toggle { display: block; }
+    
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #08295a;
+        flex-direction: column;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    .nav-menu.active { max-height: 500px; }
+    .nav-menu li { border-top: 1px solid rgba(255,255,255,0.1); }
+}
+
+/* =========================================
+   5. SEHEMU NYINGINE (Layout/Grid/Cards)
+   ========================================= */
+.section { padding: 80px 10%; }
+.main-layout-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; max-width: 1300px; margin: 50px auto; padding: 0 20px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+@media (max-width: 992px) {
+    .main-layout-grid { grid-template-columns: 1fr; }
+}
+}
