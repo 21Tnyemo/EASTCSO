@@ -7,7 +7,7 @@ let announcements = JSON.parse(localStorage.getItem("announcements")) || [
     { title: "Wasomi League Finals", message: "Come support your class teams this Friday at the main campus sports ground. Entrance is free!" },
     { title: "General Assembly Meeting", message: "All class representatives must meet at Room 14 from 2:00 PM for the upcoming parliament agenda debate." }
 ];
-
+const ADMIN_PASSWORD = "EASTCSO2026";
 // Kazi ya kuhifadhi data kwenye LocalStorage
 function saveData() {
     localStorage.setItem("announcements", JSON.stringify(announcements));
@@ -38,6 +38,12 @@ function displayAnnouncements() {
 
 // Ongeza tangazo jipya (Create)
 function addAnnouncement() {
+    const password = prompt("Enter EASTCSO Leader Password");
+
+if(password !== ADMIN_PASSWORD){
+    alert("Access Denied! Only EASTCSO Leaders can publish notices.");
+    return;
+}
     const titleInput = document.getElementById("title");
     const messageInput = document.getElementById("message");
 
@@ -60,6 +66,12 @@ function addAnnouncement() {
 
 // Hariri tangazo (Update)
 function editAnnouncement(index) {
+    const password = prompt("Enter EASTCSO Leader Password");
+
+if(password !== ADMIN_PASSWORD){
+    alert("Access Denied!");
+    return;
+}
     const title = prompt("Edit announcement title:", announcements[index].title);
     const message = prompt("Edit announcement message:", announcements[index].message);
 
@@ -78,6 +90,12 @@ function editAnnouncement(index) {
 
 // Futa tangazo (Delete)
 function deleteAnnouncement(index) {
+    const password = prompt("Enter EASTCSO Leader Password");
+
+if(password !== ADMIN_PASSWORD){
+    alert("Access Denied!");
+    return;
+}
     if (confirm("Are you sure you want to delete this announcement?")) {
         announcements.splice(index, 1);
         saveData();
