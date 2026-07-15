@@ -242,3 +242,67 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   
 });   
+
+function renderLeaderPanel(){
+
+    const panel =
+    document.getElementById("leaderPanel");
+
+    if(!panel) return;
+
+    if(localStorage.getItem("isLeader") === "true"){
+
+        panel.innerHTML = `
+        <button onclick="logoutLeader()">
+            Logout Leader
+        </button>
+        `;
+
+    }else{
+
+        panel.innerHTML = `
+        <button onclick="loginLeader()">
+            Leader Login
+        </button>
+        `;
+    }
+}
+
+function loginLeader(){
+
+    const password =
+    prompt("Enter EASTCSO Leader Password");
+
+    if(password === ADMIN_PASSWORD){
+
+        localStorage.setItem(
+            "isLeader",
+            "true"
+        );
+
+        displayAnnouncements();
+
+        renderLeaderPanel();
+
+        alert("Leader Login Successful");
+
+    }else{
+
+        alert("Wrong Password");
+
+    }
+}
+
+function logoutLeader(){
+
+    localStorage.removeItem(
+        "isLeader"
+    );
+
+    displayAnnouncements();
+
+    renderLeaderPanel();
+
+    alert("Logged Out");
+
+}
