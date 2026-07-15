@@ -7,7 +7,6 @@
 <title>EASTCSO Admin Dashboard</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -19,6 +18,58 @@ body{
 background:#f4f6f9;
 }
 
+/* --- LOGIN FORM STYLES --- */
+.login-container {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: #002b6b;
+padding: 20px;
+}
+
+.login-card {
+background: white;
+padding: 40px;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+text-align: center;
+max-width: 400px;
+width: 100%;
+}
+
+.login-card h2 {
+color: #002b6b;
+margin-bottom: 20px;
+}
+
+.login-card input {
+width: 100%;
+padding: 12px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+outline: none;
+}
+
+.login-card button {
+width: 100%;
+padding: 12px;
+background: #002b6b;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.login-card button:hover {
+background: #001f4d;
+}
+
+/* --- DASHBOARD STYLES --- */
 .header{
 background:#002b6b;
 color:white;
@@ -107,166 +158,111 @@ font-size:30px;
 margin-top:10px;
 color:#555;
 }
-
 </style>
 </head>
 <body>
 
-<div class="header">
-
-<h1>EASTCSO ADMIN DASHBOARD</h1>
-
-<button class="logout-btn"
-onclick="logoutLeader()">
-Logout
-</button>
-
+<!-- Sehemu ya Login (Inajionyesha kwanza kama admin hajalog-in) -->
+<div id="loginSection" class="login-container">
+    <div class="login-card">
+        <h2>EASTCSO Leader Login</h2>
+        <input type="password" id="adminPasswordInput" placeholder="Enter Admin Password">
+        <button onclick="loginLeader()">Login</button>
+    </div>
 </div>
 
-<div class="dashboard">
+<!-- Sehemu ya Dashboard yenyewe (Inafichwa kwa sasa hadi login ikubali) -->
+<div id="dashboardSection" style="display: none;">
+    <div class="header">
+        <h1>EASTCSO ADMIN DASHBOARD</h1>
+        <button class="logout-btn" onclick="logoutLeader()">Logout</button>
+    </div>
 
-<div class="stats">
+    <div class="dashboard">
+        <div class="stats">
+            <div class="stat-card">
+                <h3 id="announcementCount">0</h3>
+                <p>Announcements</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="eventCount">0</h3>
+                <p>Events</p>
+            </div>
+            <div class="stat-card">
+                <h3>2026</h3>
+                <p>Current Session</p>
+            </div>
+        </div>
 
-<div class="stat-card">
-<h3 id="announcementCount">0</h3>
-<p>Announcements</p>
-</div>
-
-<div class="stat-card">
-<h3 id="eventCount">0</h3>
-<p>Events</p>
-</div>
-
-<div class="stat-card">
-<h3>2026</h3>
-<p>Current Session</p>
-</div>
-
-</div>
-
-<div class="dashboard-grid">
-
-<div class="card">
-
-<h2>📢 Announcements</h2>
-
-<p>
-Create, edit and delete student notices.
-</p>
-
-<a href="news.html">
-Manage
-</a>
-
-</div>
-
-<div class="card">
-
-<h2>📅 Events</h2>
-
-<p>
-Manage EASTCSO events and activities.
-</p>
-
-<a href="events.html">
-Manage
-</a>
-
-</div>
-
-<div class="card">
-
-<h2>🖼 Gallery</h2>
-
-<p>
-Upload and manage event photos.
-</p>
-
-<a href="gallery.html">
-Manage
-</a>
-
-</div>
-
-<div class="card">
-
-<h2>👥 Leadership</h2>
-
-<p>
-View current EASTCSO leaders.
-</p>
-
-<a href="leadership.html">
-Manage
-</a>
-
-</div>
-
-<div class="card">
-
-<h2>📞 Contact Info</h2>
-
-<p>
-Update contacts and social media.
-</p>
-
-<a href="contact.html">
-Manage
-</a>
-
-</div>
-
-<div class="card">
-
-<h2>⚙ Website Settings</h2>
-
-<p>
-System information and controls.
-</p>
-
-<a href="index.html">
-Open Site
-</a>
-
-</div>
-
-</div>
-
+        <div class="dashboard-grid">
+            <div class="card">
+                <h2>📢 Announcements</h2>
+                <p>Create, edit and delete student notices.</p>
+                <a href="news.html">Manage</a>
+            </div>
+            <div class="card">
+                <h2>📅 Events</h2>
+                <p>Manage EASTCSO events and activities.</p>
+                <a href="events.html">Manage</a>
+            </div>
+            <div class="card">
+                <h2>🖼 Gallery</h2>
+                <p>Upload and manage event photos.</p>
+                <a href="gallery.html">Manage</a>
+            </div>
+            <div class="card">
+                <h2>👥 Leadership</h2>
+                <p>View current EASTCSO leaders.</p>
+                <a href="leadership.html">Manage</a>
+            </div>
+            <div class="card">
+                <h2>📞 Contact Info</h2>
+                <p>Update contacts and social media.</p>
+                <a href="contact.html">Manage</a>
+            </div>
+            <div class="card">
+                <h2>⚙ Website Settings</h2>
+                <p>System information and controls.</p>
+                <a href="index.html">Open Site</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
+// !!! WEKA PASSWORD YAKO YA ADMIN HAPA KATIKATI YA MABANO !!!
+const ADMIN_PASSWORD = "kiongozi_password"; 
 
-if(localStorage.getItem("isLeader") !== "true"){
-
-alert("Access Denied");
-
-window.location.href="news.html";
-
+// Angalia kama tayari admin alikuwa amesha-login
+if (localStorage.getItem("isLeader") === "true") {
+    showDashboard();
 }
 
-function logoutLeader(){
-
-localStorage.removeItem("isLeader");
-
-window.location.href="news.html";
-
+function loginLeader() {
+    const enteredPassword = document.getElementById("adminPasswordInput").value;
+    
+    if (enteredPassword === ADMIN_PASSWORD) {
+        localStorage.setItem("isLeader", "true");
+        showDashboard();
+    } else {
+        alert("Incorrect Password! Access Denied.");
+    }
 }
 
-let announcements =
-JSON.parse(
-localStorage.getItem("announcements")
-) || [];
+function showDashboard() {
+    document.getElementById("loginSection").style.display = "none";
+    document.getElementById("dashboardSection").style.display = "block";
+}
 
-document.getElementById(
-"announcementCount"
-).innerText =
-announcements.length;
+function logoutLeader() {
+    localStorage.removeItem("isLeader");
+    window.location.reload(); // Itajirudisha yenyewe kwenye login screen
+}
 
-document.getElementById(
-"eventCount"
-).innerText =
-3;
-
+// Kupakia idadi ya matangazo
+let announcements = JSON.parse(localStorage.getItem("announcements")) || [];
+document.getElementById("announcementCount").innerText = announcements.length;
+document.getElementById("eventCount").innerText = 3;
 </script>
 
 </body>
