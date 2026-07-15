@@ -14,28 +14,33 @@ function saveData() {
 }
 
 // Onyesha matangazo yote kwenye ukurasa
+
 function displayAnnouncements() {
     const list = document.getElementById("announcementList");
-    
+
     if (!list) return; // Prevent errors if target div isn't loaded
 
     list.innerHTML = "";
 
     announcements.forEach((item, index) => {
+        // Angalia kama mtu aliyeingia ni kiongozi/admin
+        const isLeader = localStorage.getItem("isLeader") === "true";
+
         list.innerHTML += `
         <div class="announcement" style="background: rgba(255, 255, 255, 0.08); padding: 15px; border-radius: 8px; border-left: 4px solid #d4af37; margin-top: 15px;">
             <h4 style="color: #d4af37; font-size: 1.1rem; margin-bottom: 5px; text-transform: uppercase;">${item.title}</h4>
-            <p style="color: #eee; font-size: 0.95rem; margin-bottom: 12px; line-height: 1.5;">${item.message}</p>
-            
+            <p style="color: #eee; font-size: 0.9rem; margin-bottom: 12px; line-height: 1.5;">${item.message}</p>
+
             <div class="announcement-buttons" style="display: flex; gap: 10px;">
-                <button onclick="editAnnouncement(${index})" style="background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: bold;">Edit</button>
-                <button onclick="deleteAnnouncement(${index})" style="background: #e53e3e; color: white; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: bold;">Delete</button>
+                ${isLeader ? `
+                    <button onclick="editAnnouncement(${index})" style="background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer;">Edit</button>
+                    <button onclick="deleteAnnouncement(${index})" style="background: #e53e3e; color: white; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer;">Delete</button>
+                ` : ''}
             </div>
         </div>
         `;
     });
 }
-
 // Ongeza tangazo jipya (Create)
 function addAnnouncement() {
     const password = prompt("Enter EASTCSO Leader Password");
