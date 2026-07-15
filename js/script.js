@@ -286,6 +286,9 @@ function loginLeader(){
 
         alert("Leader Login Successful");
 
+        window.location.href =
+        "admin-dashboard.html";
+
     }else{
 
         alert("Wrong Password");
